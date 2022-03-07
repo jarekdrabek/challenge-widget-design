@@ -31,41 +31,48 @@ I would go for SQL database and Django Framework for building Model and UI. It a
 amendments painless.
 
 
-If the decision is to go to SQL database the schema would be as follows<br>
+
 **_SQL Schema_**
 
 TABLE **warehouse**<br>
-warehouse_id<br>
+warehouse_id(PK)<br>
 warehoouse<br>
 
 TABLE **customer**<br>
-customer_id<br>
+customer_id(PK)<br>
 customer<br>
 
 TABLE **supplier**<br>
-supplier_id<br>
+supplier_id(PK)<br>
 supplier<br>
 
 TABLE **product**<br>
-product_id<br>
+product_id(PK)<br>
 product<br>
 packaging<br>
 <br>
 
 TABLE **delivery_cost**<br>
-product_id<br>
-warehouse_id<br>
+product_id(FK)<br>
+warehouse_id(FK)<br>
 cost<br>
 
 TABLE **special_offers**<br>
-supplier_id<br>
-product_id<br>
-customer_id<br>
-warehouse_id<br>
+supplier_id(FK)<br>
+product_id(FK)<br>
+customer_id(FK)<br>
+warehouse_id(FK)<br>
 price<br>
 min_qty<br>
 
 
 
 Ad. 3 
+In my opinion it is impossible to establish an ideal DB fo future at early stage of any appliactions, but at least we should take into consideration following questions:
+* How many users we anticipate. how many customers (reads) and how many suppliers (writes)?
+* Who are our users? Are they technical or not? How often they will use the app? how they will possibly use the application (mobile? desktop? tablet? All)
+* Is the latency critical part of the system? It can be the case when the offer will be very attractive and restricted in time.
+* 
+ 
+
 
